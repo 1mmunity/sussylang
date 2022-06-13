@@ -9,115 +9,127 @@
 </head>
 <body>
   <div class="interpreter">
-    <div id="codeMode" style="display:block;">
-      <p class="mb-1" id="credit">Adriel J. &copy; 2021</p>
-      <div class="mb-1">
-        <button onclick="evaluateCode()">Evaluate</button>
-        <button onclick="translateCode()">Translate from brainf****</button>
-        <button onclick="copyCode()">Copy</button>
-      </div>
-      <div class="word-counter">
-        <p id="charCount">0 Characters - 0 Susses</p>
-      </div>
-      <div class="textarea-wrapper mb-1">
-        <textarea id="sussycode" placeholder="Type your sussy/brainf*** code here..." rows="20"></textarea>
-      </div>
-
-      <div class="word-counter">
-        <p>Inputs</p>
-      </div>
-      <div class="textarea-wrapper mb-1">
-        <textarea id="input" placeholder="Type your inputs here..." rows="10"></textarea>
-      </div>
-    </div>
-    <div id="evalMode" style="display:none;">
-      <p class="mb-1" id="credit">Adriel J. &copy; 2021</p>
-      <button onclick="switchMode('code')" class="mb-1">Edit Mode</button>
-      <div class="table-view">
-        <div>
-          <table id="tableCells">
-            
-          </table>
-        </div>
-        <div class="ml-1 table-text">
-          <h6>Sussy table</h6>
-          <p>
-            <b>Cells: </b><span id="cellsUtilized">0</span>
-            <!-- <br />
-            <b>Byte(s): </b><span id="bytesUtilized">0</span> -->
-          </p>
-          <p>
-            This is the sussy table, where you can view the values of cells.
-            Cells will be created as your pointer navigates around.
-          </p>
-        </div>
-      </div>
-      <div>
+    <div class="wrap">
+      <div id="codeMode" style="display:block;">
+        <p class="mb-1" id="credit">Adriel J. &copy; 2021</p>
         <div class="mb-1">
-          <p><b>Operations:</b> <span id="operations">0</span></p>
-          <p><b>Current line:</b> <span id="currentLine">0</span></p>
-          <p><b>Lines:</b> <span id="lines">50</span></p>
+          <button onclick="evaluateCode()">Evaluate</button>
+          <button onclick="translateCode()">Translate from brainf****</button>
+          <button onclick="copyCode()">Copy</button>
+        </div>
+        <div class="word-counter">
+          <p id="charCount">0 Characters - 0 Susses</p>
+        </div>
+        <div class="textarea-wrapper mb-1">
+          <textarea id="sussycode" placeholder="Type your sussy code here..." rows="20"></textarea>
+        </div>
 
-          <p><b>Input:</b></p>
-          <div class="output" id="inputText">
+        <div class="word-counter">
+          <p>Inputs</p>
+        </div>
+        <div class="textarea-wrapper mb-1">
+          <textarea id="input" placeholder="Type your inputs here..." rows="10"></textarea>
+        </div>
+      </div>
+      <div id="evalMode" style="display:none;">
+        <p class="mb-1" id="credit">Adriel J. &copy; 2021</p>
+        <button onclick="switchMode('code')" class="mb-1">Edit Mode</button>
+        <div class="table-view">
+          <div>
+            <table id="tableCells">
+              
+            </table>
           </div>
-
-          <p><b>Output:</b></p>
-          <div class="output" id="output">
+          <div class="ml-1 table-text">
+            <h6>Sussy table</h6>
+            <p>
+              <b>Cells: </b><span id="cellsUtilized">0</span>
+              <!-- <br />
+              <b>Byte(s): </b><span id="bytesUtilized">0</span> -->
+            </p>
+            <p>
+              This is the sussy table, where you can view the values of cells.
+              Cells will be created as your pointer navigates around.
+            </p>
           </div>
         </div>
         <div>
-          <button onclick="runCode(25)">Run</button>
-          <button onclick="runCode(0)">Run (per 1000 ops)</button>
-          <button onclick="killSussy()">Kill</button>
-          <button disabled>Pause</button>
-          <button disabled>Step</button>
+          <div class="mb-1">
+            <p><b>Operations:</b> <span id="operations">0</span></p>
+            <p><b>Current line:</b> <span id="currentLine">0</span></p>
+            <p><b>Lines:</b> <span id="lines">50</span></p>
+
+            <p><b>Input:</b></p>
+            <div class="output" id="inputText">
+            </div>
+
+            <p><b>Output:</b></p>
+            <div class="output" id="output">
+            </div>
+          </div>
+          <div>
+            <button onclick="runCode(25)">Run</button>
+            <button onclick="runCode(0)">Run (per 1000 ops)</button>
+            <button onclick="killSussy()">Kill</button>
+            <button disabled>Pause</button>
+            <button disabled>Step</button>
+          </div>
+          <p class="sm">
+            (These features will be added soon, if i'm not lazy lol.)
+          </p>
         </div>
-        <p class="sm">
-          (These features will be added soon, if i'm not lazy lol.)
-        </p>
       </div>
     </div>
   </div>
   <div class="main">
-    <div class="mb-2">
-      <h6>Operators</h6>
-      <p>
-        <b>Note:</b> Add <code>sussy</code> to both ends of the program!
-      </p>
-      <p>
-        <code>sus</code> - Make the pointer go down 1 cell<br />
-        <code>sus sus</code> - Make the pointer go up 1 cell<br />
-        <code>sus sus sus</code> - Increase current cell value by 1<br />
-        <code>sus sus sus sus</code> - Decrease current cell value by 1<br />
-        <code>sus sus sus sus sus</code> - Open loop<br />
-        <code>sus sus sus sus sus sus</code> - Close loop<br />
-        <code>sus sus sus sus sus sus sus</code> - Print out current cell value as char<br />
-        <code>sus sus sus sus sus sus sus sus</code> - Get input<br />
-      </p>
-    </div>
+    <div class="wrap">
+      <div class="mb-2">
+        <h6>Operators</h6>
+        <p>
+          <b>Note:</b> Add <code>sussy</code> to both ends of the program!
+        </p>
+        <p>
+          <code>sus</code> - Make the pointer go down 1 cell<br />
+          <code>sus sus</code> - Make the pointer go up 1 cell<br />
+          <code>sus sus sus</code> - Increase current cell value by 1<br />
+          <code>sus sus sus sus</code> - Decrease current cell value by 1<br />
+          <code>sus sus sus sus sus</code> - Open loop<br />
+          <code>sus sus sus sus sus sus</code> - Close loop<br />
+          <code>sus sus sus sus sus sus sus</code> - Print out current cell value as char<br />
+          <code>sus sus sus sus sus sus sus sus</code> - Get input<br />
+        </p>
+      </div>
 
-    <h1 class="mb-1">Sussylang</h1>
-    <p>Sussylang is a goofy ahh language</p>
-    <!-- <p>TLDR: It's a hybrid of brainf### and my boredom.</p> -->
+      <div class="mb-2">
+        <h6 class="mb-1">Load Examples</h6>
+        <p>The examples will be automatically loaded on the code editor.</p>
+        <br />
+        <div id="examples">
+        </div>
+      </div>
 
-    <div class="rules">
-      <h6>Rules</h6>
-      <p>
-        Every operator/command is seperated by a new line <code>\n</code> or <kbd>enter</kbd>.
-      </p>
-      <p>
-        You start the program with a <code>sussy</code> keyword and end it with a
-        <code>sussy</code> keyword (optional).
-        Everything above that is ignored, you can use that as a comment.
-      </p>
-      <p>
-        Only the <code>sussy</code> and <code>sus</code> keywords are used.
-        It's the quantity of <code>sus</code> that determines the command/operator
-      </p>
-      <p>
-        You will start with 10 cells, use the operators/commands to navigate around them and increase/decrease their values.
-      </p>
+      <h1 class="mb-1">Sussylang</h1>
+      <p>Sussylang is a goofy ahh language</p>
+      <!-- <p>TLDR: It's a hybrid of brainf### and my boredom.</p> -->
+
+      <div class="rules">
+        <h6>Rules</h6>
+        <p>
+          Every operator/command is seperated by a new line <code>\n</code> or <kbd>enter</kbd>.
+        </p>
+        <p>
+          You start the program with a <code>sussy</code> keyword and end it with a
+          <code>sussy</code> keyword (optional).
+          Everything above that is ignored, you can use that as a comment.
+        </p>
+        <p>
+          Only the <code>sussy</code> and <code>sus</code> keywords are used.
+          It's the quantity of <code>sus</code> that determines the command/operator
+        </p>
+        <p>
+          You will start with 10 cells, use the operators/commands to navigate around them and increase/decrease their values.
+        </p>
+      </div>
     </div>
   </div>
   <!-- <div class="button-wrapper">

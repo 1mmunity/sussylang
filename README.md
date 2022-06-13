@@ -1,2 +1,4 @@
 # Sussylang
 A web interpreter for sussylang
+
+**THERE ARE STILL MANY BUGS, THIS MIGHT BE BECAUSE I COPIED A BF INTERPRETER FROM 9 YRS AGO**

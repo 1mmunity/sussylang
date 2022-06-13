@@ -40,9 +40,42 @@ function translateCode() {
   charCount(textarea)
 }
 
+async function loadExample(file) {
+  const scode = document.getElementById("sussycode")
+  scode.value = await fetch('./examples/' + file).then((x) => x.text())
+}
+
 function copyCode() {
   const sussycode = document.getElementById("sussycode")
   sussycode.select()
   document.execCommand("copy") // why is it deprecated?
   window.getSelection().removeAllRanges()
 }
+
+const files = [{
+  name: 'hello_world.sus',
+  description: 'Outputs "Hello World!"'
+},
+{
+  name: 'fib.sus',
+  description: 'Outputs the fibonacci sequence'
+}, {
+  name: 'e.sus',
+  description: 'Outputs the euler number'
+}, {
+  name: 'golden.sus',
+  description: 'Outputs the golden ratio'
+}, {
+  name: 'squares.sus',
+  description: 'Outputs the squares of the numbers from 0 to infinity'
+}, {
+  name: 'echo.sus',
+  description: 'Outputs the input'
+}]
+function exLoad() {
+  const examples = document.getElementById("examples")
+  const formatted = files.sort((a, b) => b.name.length - a.name.length).map(x => `<button onclick="loadExample('${x.name}')">${x.name}</button> - <span>${x.description}</span>`).join('<br />')
+  examples.innerHTML = formatted
+}
+
+exLoad()

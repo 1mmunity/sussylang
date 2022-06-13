@@ -42,6 +42,7 @@ function resetAll() {
   sussy = null
   cells = new Array(10).fill(0)
   pointer = 0
+  updateOperations(0)
   displayCellsToTable()
   updateCurrentLine(0)
   updateCurrentOutput('')
@@ -167,13 +168,13 @@ class SussyLang {
         this.c += 1
       },
       '+': () => {
-        cells[pointer] += 1
-        if (cells[pointer] === 256) cells[pointer] = 0
+        if (cells[pointer]+1 === 256) cells[pointer] = 0
+        else cells[pointer] += 1
         this.c++
       },
       '-': () => {
-        cells[pointer] -= 1
-        if (cells[pointer] === -1) cells[pointer] = 255
+        if (cells[pointer]-1 === -1) cells[pointer] = 255
+        else cells[pointer] -= 1
         this.c++
       },
       '[': () => {
@@ -191,7 +192,7 @@ class SussyLang {
 
         if (this.msDelay) {
           const ots = document.getElementById("output")
-          ots.innerText += m
+          ots.innerText = this.output
         }
       },
       ',': () => {
@@ -257,7 +258,7 @@ class SussyLang {
         updateCurrentOutput(this.output)
         updateOperations(this.ops)
         updateCellsUtilized()
-        await new Promise((resolve) => setTimeout(resolve, 25)) // will lag if it's too fast
+        await new Promise((resolve) => setTimeout(resolve, 1)) // will lag if it's too fast
       }
     }
     return this.output
