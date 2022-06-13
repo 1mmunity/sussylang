@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.182);
+  border-radius: 5px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 5px;
+}
+
+:root {
+  --color-primary: #5EBEC4;
+  --color-primary-dark: #4DA1A0;
+
+  --color-neutral: #FDF5DF;
+  --color-neutral-dark: #fbecc0;
+
+  --color-accent-dark: #dd2776;
+  --color-accent: #F92C85;
+  --color-accent-light: #f92c852f;
+  --color-gray: #fafafa;
+  --color-gray-dark: #7b7b7b;
+  
+  --font-primary: 'PT Serif', sans-serif;
+  --font-header: sans-serif;
+}
+
+body {
+  background-color: var(--color-neutral);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+p, li, table {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+code {
+  color: var(--color-accent);
+  background-color: var(--color-accent-light);
+  font-size: .95rem;
+  padding: .25rem .6rem;
+  border-radius: 5px;
+}
+
+kbd {
+  background-color: var(--color-gray);
+  color: var(--color-gray-dark);
+  font-size: 1rem;
+  padding: .25rem .75rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.47);
+}
+
+textarea {
+  background-color: var(--color-gray);
+  outline: none;
+  border: none;
+  width: 100%;
+  resize: none;
+  height: auto;
+  scrollbar-width: 0;
+}
+
+button {
+  background-color: var(--color-accent);
+  color: var(--color-neutral);
+  font-size: .75rem;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--color-accent-dark);
+}
+
+table {
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table, td, th, tr {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 2px;
+  font-size: 1rem;
+  text-align: left;
+  width: 5rem;
+}
+
+td {
+  padding: 0 5rem 0 .5rem;
+}
+
+th {
+  padding: 0 .5rem 0 .5rem;
+  background-color: var(--color-neutral-dark);
+}
+
+button:disabled {
+  opacity: .5;
+}
+
+.output {
+  padding: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  max-height: 5rem;
+  overflow-y: scroll;
+}
+
+.sm {
+  margin-top: 5px;
+  opacity: .5;
+  font-size: smaller;
+}
+
+.secondary-btn {
+  background-color: var(--color-primary);
+}
+
+.secondary-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.current-cell {
+  background-color: var(--color-accent-light);
+}
+
+.table-view {
+  display: flex;
+  margin-bottom: 2rem;
+  max-height: 20rem;
+  overflow-y: scroll;
+}
+
+.table-view p {
+  margin-bottom: .5rem;
+}
+
+.rules p {
+  margin-bottom: 1rem;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.interpreter {
+  padding: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.ml-1 {
+  margin-left: 1.5rem;
+}
+
+.rules {
+  margin-top: 2.5rem;
+}
+
+.textarea-wrapper {
+  padding: .5rem;
+  background-color: var(--color-gray);
+}
+
+/* .button-wrapper {
+  position: absolute;
+  bottom: 0;
+}
+
+.button-wrapper__inner {
+  padding: 2rem;
+  background-color: var(--color-neutral-dark);
+  border-radius: 0 25px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+} */
+
+.word-counter {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  padding: .25rem .5rem;
+}
+
+.word-counter p {
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.table-text {
+  display: none;
+}
+
+.mb-2 {
+  margin-bottom: 3.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  p, code, kbd {
+    font-size: 1rem;
+  }
+}
+
+/* If the screen is big enough the sussy area and rules will be displayed side by side */
+@media screen and (min-width: 1080px) {
+  body {
+    display: flex;
+    overflow-y: hidden;
+  }
+
+  .table-text {
+    display: block;
+  }
+
+  .interpreter, .main {
+    flex: 1;
+    max-height: 100vh;
+  }
+
+  .main {
+    overflow-y: scroll;
+  }
+
+  .interpreter {
+    padding: 2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
+
+#credit {
+  opacity: 25%;
+  font-size: .75rem;
+  text-align: center;
+}
