@@ -254,7 +254,7 @@ class SussyLang {
         updateOperations(this.ops)
         updateCellsUtilized()
         await new Promise((resolve) => setTimeout(resolve, this.msDelay))
-      } else if (this.ops % 1000 === 0 || this.ops < 1000) {
+      } else if (this.ops % 1000 === 0) {
         displayCellsToTable()
         updateCurrentLine(this.c)
         updateCurrentOutput(this.output)
