@@ -71,7 +71,11 @@ const files = [{
 }, {
   name: 'echo.sus',
   description: 'Outputs the input'
+}, {
+  name: 'random.sus',
+  description: 'Generates random bytes'
 }]
+
 function exLoad() {
   const examples = document.getElementById("examples")
   const formatted = files.sort((a, b) => b.name.length - a.name.length).map(x => `<button onclick="loadExample('${x.name}')">${x.name}</button> - <span>${x.description}</span>`).join('<br />')

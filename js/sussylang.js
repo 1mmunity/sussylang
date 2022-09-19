@@ -170,11 +170,15 @@ class SussyLang {
       '+': () => {
         if (cells[pointer]+1 === 256) cells[pointer] = 0
         else cells[pointer] += 1
+
+        // cells[pointer] += 1
         this.c++
       },
       '-': () => {
         if (cells[pointer]-1 === -1) cells[pointer] = 255
         else cells[pointer] -= 1
+
+        // cells[pointer] -= 1
         this.c++
       },
       '[': () => {
@@ -196,7 +200,7 @@ class SussyLang {
         }
       },
       ',': () => {
-        if (!this.in.length) return
+        if (!this.in.length) return false
         cells[pointer] = this.in.charCodeAt(0)
         this.in = this.in.substring(1)
         this.c++
@@ -242,7 +246,7 @@ class SussyLang {
     var l = source.length
     while (this.c < l) {
       this.ops++
-      this.operators[source[this.c]]()
+      if (this.operators[source[this.c]]() === false) break
 
       if (this.msDelay) {
         displayCellsToTable()
@@ -250,9 +254,7 @@ class SussyLang {
         updateOperations(this.ops)
         updateCellsUtilized()
         await new Promise((resolve) => setTimeout(resolve, this.msDelay))
-      }
-
-      if (this.ops % 1000 === 0) {
+      } else if (this.ops % 1000 === 0 || this.ops < 1000) {
         displayCellsToTable()
         updateCurrentLine(this.c)
         updateCurrentOutput(this.output)

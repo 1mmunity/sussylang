@@ -1,4 +1,6 @@
 # Sussylang
-A web interpreter for sussylang
 
-**THERE ARE STILL MANY BUGS, THIS MIGHT BE BECAUSE I COPIED A BF INTERPRETER FROM 9 YRS AGO**
+A goofy ahh language.  
+There are examples provided on the website.  
+You can visit the SussyLang interpreter on:  
+https://1mmunity.github.io/sussylang
